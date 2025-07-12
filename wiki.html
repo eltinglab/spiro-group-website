@@ -1,0 +1,40 @@
+---
+layout: page
+title: Wiki
+---
+
+<div class="wiki-page">
+  {% assign wiki_by_category = site.wiki | group_by: 'category' %}
+  
+  {% for category_group in wiki_by_category %}
+    {% if category_group.name != "" %}
+      <h2>{{ category_group.name | capitalize }}</h2>
+    {% else %}
+      <h2>General</h2>
+    {% endif %}
+    
+    <ul class="wiki-list">
+      {% assign pages_in_category = category_group.items | sort: 'order' %}
+      {% for page in pages_in_category %}
+        <li>
+          <a href="{{ page.url }}">{{ page.title }}</a>
+          {% if page.excerpt %}
+            <p>{{ page.excerpt | strip_html | truncate: 150 }}</p>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+  
+  {% if site.wiki.size == 0 %}
+    <p>Wiki pages will be displayed here once added to the _wiki collection.</p>
+    
+    <h2>Getting Started</h2>
+    <p>To add new wiki pages:</p>
+    <ol>
+      <li>Create a new Markdown file in the <code>_wiki</code> directory</li>
+      <li>Add appropriate front matter with title and category</li>
+      <li>Write your content in Markdown format</li>
+    </ol>
+  {% endif %}
+</div>

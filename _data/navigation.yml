@@ -1,0 +1,20 @@
+header:
+  - titles:
+      en      : &EN       Home
+    url: /
+
+  - titles:
+      en      : &EN       Groups
+    url: /people/
+
+  - titles:
+      en      : &EN       Research
+    url: /papers/
+
+  - titles:
+      en      : &EN       Wiki
+    url: /wiki/
+
+  - titles:
+      en      : &EN       About
+    url: /about/

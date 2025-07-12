@@ -1,0 +1,30 @@
+# System files
+*~
+~*
+*.diff
+*.patch
+*.bak
+.DS_Store
+*.swp
+*.swo
+*.log
+*.log.*
+
+# Editor files
+/.vscode/
+
+# Jekyll
+_site/
+.jekyll-metadata
+.jekyll-cache/
+.sass-cache/
+
+# Ruby/Bundler
+/.bundle/
+/vendor/bundle
+*.gem
+Gemfile.lock
+
+# Temporary files
+*.tmp
+*.temp
